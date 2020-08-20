@@ -1,6 +1,8 @@
 package org.katas.refactoring.fizzbuzz;
 
 
+import java.io.PrintStream;
+
 public class FizzBuzz {
 
     private static final String FIZZ = "Fizz";
@@ -35,9 +37,12 @@ public class FizzBuzz {
     }
 
     public static void main(String[] args) {
-        FizzBuzz fizzBuzz = new FizzBuzz();
-        for (int i = 0; i < 200; i++) {
-            System.out.println(fizzBuzz.sayIt(i + 1));
+        application(new FizzBuzz(), System.out, 200);
+    }
+
+    static void application(FizzBuzz fizzBuzz, PrintStream out, int count) {
+        for (int i = 0; i < count; i++) {
+            out.println(fizzBuzz.sayIt(i + 1));
         }
     }
 }
