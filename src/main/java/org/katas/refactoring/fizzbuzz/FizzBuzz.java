@@ -16,6 +16,20 @@ public class FizzBuzz {
         return String.valueOf(input);
     }
 
+    private String dividedBy357New(int input) {
+        String result = "";
+        if (input % 3 == 0) {
+            result += "Fizz";
+        }
+        if (input % 5 == 0) {
+            result += "Buzz";
+        }
+        if (input % 7 == 0) {
+            result += "Whizz";
+        }
+        return result;
+    }
+
     private String dividedBy357(int input, String result) {
         int flag = 0;
         flag += input % 3 == 0 ? 0b001 : 0;
