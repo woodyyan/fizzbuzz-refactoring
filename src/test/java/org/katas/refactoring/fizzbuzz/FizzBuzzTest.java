@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class FizzBuzzSmokeTest {
+public class FizzBuzzTest {
 
     @Test
     public void should_return_fizz_when_fizz_buzz_given_input_contains_3() {
