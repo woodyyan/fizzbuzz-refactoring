@@ -3,29 +3,33 @@ package org.katas.refactoring.fizzbuzz;
 
 public class FizzBuzz {
 
-    public String sayIt(int input) {
-        String result;
+    private static final String FIZZ = "Fizz";
+    private static final String BUZZ = "Buzz";
+    private static final String WHIZZ = "Whizz";
 
-        if (String.valueOf(input).contains("3")) return "Fizz";
+    public String sayIt(int number) {
+        String word;
 
-        result = dividedBy357(input);
+        if (String.valueOf(number).contains("3")) return FIZZ;
 
-        if (!"".equals(result)) {
-            return result;
+        word = dividedBy357(number);
+
+        if (!"".equals(word)) {
+            return word;
         }
-        return String.valueOf(input);
+        return String.valueOf(number);
     }
 
-    private String dividedBy357(int input) {
+    private String dividedBy357(int number) {
         String result = "";
-        if (input % 3 == 0) {
-            result += "Fizz";
+        if (number % 3 == 0) {
+            result += FIZZ;
         }
-        if (input % 5 == 0) {
-            result += "Buzz";
+        if (number % 5 == 0) {
+            result += BUZZ;
         }
-        if (input % 7 == 0) {
-            result += "Whizz";
+        if (number % 7 == 0) {
+            result += WHIZZ;
         }
         return result;
     }
