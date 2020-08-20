@@ -9,7 +9,7 @@ public class FizzBuzz {
 
         String result = "";
 
-        if (contains3New(input)) return "Fizz";
+        if (String.valueOf(input).contains("3")) return "Fizz";
 
         int flag = 0;
         flag += input % 3 == 0 ? 0b001 : 0;
@@ -29,21 +29,6 @@ public class FizzBuzz {
             return result;
         }
         return String.valueOf(input);
-    }
-
-    private boolean contains3(int input) {
-        int temp = input;
-        while (temp != 0) {
-            if (temp % 10 == 3) {
-                return true;
-            }
-            temp /= 10;
-        }
-        return false;
-    }
-
-    private boolean contains3New(int input) {
-        return String.valueOf(input).contains("3");
     }
 
     public static void main(String[] args) {
