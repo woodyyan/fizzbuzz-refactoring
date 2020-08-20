@@ -5,17 +5,11 @@ public class FizzBuzz {
 
 
     public String sayIt(int input) {
-        
+
 
         String result = "";
 
-        int temp = input;
-        while(temp != 0){
-            if(temp % 10 == 3) {
-                return "Fizz";
-            }
-            temp /= 10;
-        }
+        if (contains3(input)) return "Fizz";
 
         int flag = 0;
         flag += input % 3 == 0 ? 0b001 : 0;
@@ -25,7 +19,7 @@ public class FizzBuzz {
         String[] items = {"Fizz", "Buzz", "Whizz"};
         int i = 0;
         while (i < 3) {
-            if(((flag>>i)&1) == 1){
+            if (((flag >> i) & 1) == 1) {
                 result += items[i];
             }
             i++;
@@ -37,13 +31,22 @@ public class FizzBuzz {
         return String.valueOf(input);
     }
 
+    private boolean contains3(int input) {
+        int temp = input;
+        while (temp != 0) {
+            if (temp % 10 == 3) {
+                return true;
+            }
+            temp /= 10;
+        }
+        return false;
+    }
 
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         FizzBuzz fizzBuzz = new FizzBuzz();
         for (int i = 0; i < 200; i++) {
-            System.out.println(fizzBuzz.sayIt(i+1));
+            System.out.println(fizzBuzz.sayIt(i + 1));
         }
-
-
     }
 }
