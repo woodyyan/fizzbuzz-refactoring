@@ -8,7 +8,7 @@ public class FizzBuzz {
 
         if (String.valueOf(input).contains("3")) return "Fizz";
 
-        result = dividedBy357(input, result);
+        result = dividedBy357New(input);
 
         if (!"".equals(result)) {
             return result;
