@@ -6,6 +6,24 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class FizzBuzzSmokeTest {
+
+    @Test
+    public void should_return_fizz_when_fizz_buzz_given_input_contains_3() {
+        // 测试景色 测试包含3的情况
+        // 一般等价类：
+        // 13是包含3
+        // 30是本应该说fizzbuzz
+        // 35本应该说buzzwhizz
+        // 315本应该说fizzbuzzwhizz
+
+        FizzBuzz fizzBuzz = new FizzBuzz();
+        assertThat(fizzBuzz.sayIt(3), is("Fizz"));
+        assertThat(fizzBuzz.sayIt(13), is("Fizz"));
+        assertThat(fizzBuzz.sayIt(30), is("Fizz"));
+        assertThat(fizzBuzz.sayIt(35), is("Fizz"));
+        assertThat(fizzBuzz.sayIt(315), is("Fizz"));
+    }
+
     @Test
     public void should_smoke_test_pass_when_fizz_buzz_given_200_numbers() {
         String expected = "1\n" +
