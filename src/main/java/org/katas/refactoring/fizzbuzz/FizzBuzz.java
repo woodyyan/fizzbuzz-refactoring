@@ -3,14 +3,20 @@ package org.katas.refactoring.fizzbuzz;
 
 public class FizzBuzz {
 
-
     public String sayIt(int input) {
-
-
         String result = "";
 
         if (String.valueOf(input).contains("3")) return "Fizz";
 
+        result = dividedBy357(input, result);
+
+        if (!"".equals(result)) {
+            return result;
+        }
+        return String.valueOf(input);
+    }
+
+    private String dividedBy357(int input, String result) {
         int flag = 0;
         flag += input % 3 == 0 ? 0b001 : 0;
         flag += input % 5 == 0 ? 0b010 : 0;
@@ -24,11 +30,7 @@ public class FizzBuzz {
             }
             i++;
         }
-
-        if (!"".equals(result)) {
-            return result;
-        }
-        return String.valueOf(input);
+        return result;
     }
 
     public static void main(String[] args) {
