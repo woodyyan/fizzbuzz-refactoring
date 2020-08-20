@@ -42,6 +42,9 @@ public class FizzBuzz {
         return false;
     }
 
+    private boolean contains3New(int input) {
+        return String.valueOf(input).contains("3");
+    }
 
     public static void main(String[] args) {
         FizzBuzz fizzBuzz = new FizzBuzz();
