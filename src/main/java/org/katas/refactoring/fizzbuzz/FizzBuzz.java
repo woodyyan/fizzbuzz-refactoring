@@ -9,7 +9,7 @@ public class FizzBuzz {
 
         String result = "";
 
-        if (contains3(input)) return "Fizz";
+        if (contains3New(input)) return "Fizz";
 
         int flag = 0;
         flag += input % 3 == 0 ? 0b001 : 0;
